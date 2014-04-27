@@ -1,0 +1,6 @@
+$(function() {
+ 11         $( document ).on( 'submit', '.fart', function( e ) {
+ 12                 e.preventDefault();     
+ 13         });
+ 14 });
+

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Demo</title>
+</head>
+<body>
+	<a href="http://jquery.com/">JQuery</a>
+	<button id="test">hello</button><br>
+	<input type="text" id="info" name="sendinfo">
+	<button id="thresh">goodbye</button>
+	<script src="jquery.js"></script>
+	<script>
+		$( document ).ready(function() {
+			$( "#test" ).click(function( e ){
+				alert( "Thanks for visiting" );
+				e.preventDefault();
+			});
+		});
+	</script>
+	<script>
+		$( document ).ready(function() {
+			$( "#thresh" ).click(function( e ){
+				var send = $("#info").val();
+				$.post( "thresholdPage.php", { threshold: send })
+					.done(function( data ){
+						alert( data );
+					});
+			});
+		});
+	</script>
+</body>
+</html>
